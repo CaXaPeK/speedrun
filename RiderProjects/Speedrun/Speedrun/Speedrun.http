@@ -1,0 +1,6 @@
+@Speedrun_HostAddress = http://localhost:5046
+
+GET {{Speedrun_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
