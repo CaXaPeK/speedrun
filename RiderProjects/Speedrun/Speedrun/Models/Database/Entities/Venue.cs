@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace Speedrun.Models.Database.Entities;
 
-public class CompetitionCategory
+/// <summary>Площадка (корт, татами) в рамках соревнования.</summary>
+public class Venue
 {
     [Key]
     public Guid Id { get; set; }
@@ -10,10 +11,9 @@ public class CompetitionCategory
     public Guid CompetitionId { get; set; }
     public Competition Competition { get; set; } = null!;
 
-    public DateTime? ScheduledStartUtc { get; set; }
+    public int Number { get; set; }
 
-    public Guid CategoryId { get; set; }
-    public Category Category { get; set; } = null!;
+    public string? DisplayName { get; set; }
 
     public ICollection<Subgroup> Subgroups { get; set; } = new List<Subgroup>();
 }
